@@ -60,7 +60,6 @@ class Main {
         return name;
     }
     public static int ReadAge() throws WrongStudentAge{
-        scan.nextLine();
         System.out.println("Podaj wiek: ");
         var age = scan.nextLine();
         int ageInt = Integer.parseInt(age);
@@ -68,10 +67,10 @@ class Main {
             throw new WrongStudentAge();
         return ageInt;
     }
+    
     public static void exercise1() throws IOException, WrongStudentName, WrongStudentAge {
         var name = ReadName();
         var age = ReadAge();
-        scan.nextLine();
         System.out.println("Podaj datę urodzenia DD-MM-YYYY");
         var date = scan.nextLine();
         (new Service()).addStudent(new Student(name, age, date));
